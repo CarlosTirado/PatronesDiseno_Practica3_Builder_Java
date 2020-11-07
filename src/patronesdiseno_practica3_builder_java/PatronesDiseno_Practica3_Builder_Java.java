@@ -30,19 +30,26 @@ public class PatronesDiseno_Practica3_Builder_Java {
         proyecciones.add(new ReciboPagoProyeccion(new Date(), 2000000));
         
         
-        ReciboPagoBuilder builder = new ReciboPagoBuilder();
+        ReciboPagoBuilder builder;
+        
+        builder = new ReciboPagoBuilder();
         builder
                 .setNumeroRecibo("20200001")
                 .setIdentificacion("11111111")
-                .setNombre("Carlos Tirado") 
+                .setNombre("Carlos Tirado");
+        ReciboPago reciboPago1 = builder.build();
+        
+        
+        
+        builder = new ReciboPagoBuilder();
+        builder
+                .setIdentificacion("2222222")
                 .setDetallesRecibo(detallesRecibo)
                 .setProyeccionesRecibo(proyecciones);
-        
-        ReciboPago reciboPago1 = builder.build();
+        ReciboPago reciboPago2 = builder.build();
+
         System.out.println(reciboPago1.toString());
-            
+        System.out.println(reciboPago2.toString());
         
-        
-    }
-    
+    }   
 }
